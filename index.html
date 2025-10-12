@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beaver-Painters | Bringing Color & Quality to Every Corner</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic vectors -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom font import for a modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #F8F8F8; /* Light gray background */
+        }
+        
+        /* Define custom colors based on the requested theme */
+        .color-primary-blue { color: #00569A; }
+        .bg-primary-blue { background-color: #00569A; }
+        .bg-accent-brown { background-color: #8B4513; }
+        
+        /* Utility class for icon size */
+        .icon { width: 24px; height: 24px; }
+
+        /* Ensure smooth scrolling on anchor links */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Beaver-Painters Logo Template (Image + Text) -->
+    <!-- LOGO SOURCE REVERTED BACK TO IMG.PNG -->
+    <div id="beaver-logo" class="flex items-center space-x-2 text-xl font-bold color-primary-blue">
+        <img src="img.png" 
+             alt="Beaver-Painters Company Logo" 
+             class="h-8 w-auto rounded"
+             onerror="this.onerror=null;this.src='https://placehold.co/32x32/8B4513/FFFFFF?text=BP'">
+        <span>Beaver-Painters</span>
+    </div>
+    
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <!-- Logo Target -->
+            <a href="#home" class="flex items-center space-x-2 text-xl font-bold color-primary-blue" id="nav-logo-target">
+                <!-- Content injected by JS -->
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex lg:items-center lg:space-x-6">
+                <a href="#home" class="text-gray-700 hover:text-blue-800 font-medium transition duration-200">Home</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-800 font-medium transition duration-200">Services</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-800 font-medium transition duration-200">About Us</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-800 font-medium transition duration-200">Testimonials</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-800 font-medium transition duration-200">Contact</a>
+                <a href="#contact" class="bg-primary-blue text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-200 shadow-lg">
+                    Get a Free Quote
+                </a>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white px-4 pb-4">
+            <nav class="flex flex-col space-y-3">
+                <a href="#home" class="text-gray-700 hover:text-blue-800 font-medium py-1" onclick="closeMobileMenu()">Home</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-800 font-medium py-1" onclick="closeMobileMenu()">Services</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-800 font-medium py-1" onclick="closeMobileMenu()">About Us</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-800 font-medium py-1" onclick="closeMobileMenu()">Testimonials</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-800 font-medium py-1" onclick="closeMobileMenu()">Contact</a>
+                <a href="#contact" class="bg-primary-blue text-white px-5 py-2 mt-2 text-center rounded-lg font-semibold hover:bg-blue-700 transition duration-200 shadow-md" onclick="closeMobileMenu()">
+                    Get a Free Quote
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section: Hero -->
+        <section id="home" class="bg-gray-100 pt-16 pb-24 sm:pt-24 sm:pb-32 relative overflow-hidden rounded-b-xl shadow-inner">
+            <!-- Background Visual: subtle geometric pattern for modern look -->
+            <div class="absolute inset-0 bg-primary-blue opacity-10"></div>
+            
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <p class="text-lg font-medium text-gray-600 mb-4">A Branch of Beaver-Sealer</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 color-primary-blue">
+                    Bringing Color & Quality to Every Corner
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-10">
+                    Premium cabinet painting, immaculate wall finishes, and durable epoxy floor coatings for residential and commercial spaces in Ontario.
+                </p>
+                <a href="#contact" class="bg-accent-brown text-white text-xl px-10 py-4 rounded-xl font-bold hover:bg-amber-900 transition duration-300 shadow-xl transform hover:scale-[1.02]">
+                    Get a Free Quote Today
+                </a>
+            </div>
+        </section>
+
+        <!-- Home Section: Service Highlights -->
+        <section class="py-20 bg-white" id="services">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16 color-primary-blue">Our Specialized Painting Services</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <!-- Cabinet Painting -->
+                    <div class="p-8 bg-gray-50 rounded-xl shadow-2xl hover:shadow-primary-blue/30 transition duration-300 transform hover:-translate-y-1 border-t-4 border-primary-blue">
+                        <div class="bg-primary-blue text-white w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                             <!-- Paint Brush Icon -->
+                             <i data-lucide="brush" class="icon w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 color-primary-blue">Cabinet Transformation</h3>
+                        <p class="text-gray-600 mb-6">We deliver factory-smooth, durable finishes for your kitchen cabinets and built-ins, offering an elegant alternative to costly replacement.</p>
+                        <a href="#contact" class="font-bold text-accent-brown hover:text-blue-800 hover:underline transition duration-200 flex items-center space-x-2">
+                            <span>Inquire about Cabinets</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Wall Painting -->
+                    <div class="p-8 bg-gray-50 rounded-xl shadow-2xl hover:shadow-primary-blue/30 transition duration-300 transform hover:-translate-y-1 border-t-4 border-accent-brown">
+                        <div class="bg-accent-brown text-white w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                            <!-- Paint Roller Icon -->
+                             <i data-lucide="paint-roller" class="icon w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 color-primary-blue">Interior & Exterior Walls</h3>
+                        <p class="text-gray-600 mb-6">From refreshing a single room to painting entire commercial buildings, we guarantee clean lines, superior coverage, and absolute reliability.</p>
+                        <a href="#contact" class="font-bold text-accent-brown hover:text-blue-800 hover:underline transition duration-200 flex items-center space-x-2">
+                            <span>Inquire about Walls</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Epoxy Flooring -->
+                    <div class="p-8 bg-gray-50 rounded-xl shadow-2xl hover:shadow-primary-blue/30 transition duration-300 transform hover:-translate-y-1 border-t-4 border-primary-blue">
+                        <div class="bg-primary-blue text-white w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                            <!-- Floor Icon -->
+                             <i data-lucide="hard-hat" class="icon w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 color-primary-blue">Durable Epoxy Floors</h3>
+                        <p class="text-gray-600 mb-6">High-performance, seamless epoxy coatings for garages, basements, and industrial spaces—offering maximum durability and chemical resistance.</p>
+                        <a href="#contact" class="font-bold text-accent-brown hover:text-blue-800 hover:underline transition duration-200 flex items-center space-x-2">
+                            <span>Inquire about Epoxy</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section (Simplified and Text-Focused) -->
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-4xl text-center">
+                <h2 class="text-4xl font-bold mb-6 color-primary-blue">Our Story & Mission</h2>
+                <p class="text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    The Beaver-Painters Difference: Built on Trust, Delivered with Precision and unmatched professionalism.
+                </p>
+
+                <div class="space-y-8 text-left">
+                    <h3 class="text-3xl font-semibold mb-4 text-accent-brown text-center">A Branch of Beaver-Sealer</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Beaver-Painters was established as a dedicated painting division of our trusted parent company, <strong class="text-accent-brown">Beaver-Sealer</strong>. We brought the same core values, reliability, meticulous preparation, and a commitment to superior finishes, into the world of painting and coatings.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed font-semibold border-l-4 border-primary-blue pl-4 py-1 bg-white shadow-sm">
+                        Our mission is simple: To deliver exceptional, long-lasting painting and coating solutions with a focus on <strong>clean execution, premium materials, and absolute customer satisfaction.</strong> We pride ourselves on transparent communication and minimal disruption to your daily life.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 pt-4">
+                        <div class="flex items-center space-x-3 text-xl font-medium color-primary-blue">
+                            <i data-lucide="check-circle" class="icon text-primary-blue w-6 h-6"></i>
+                            <span>Reliability</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-xl font-medium color-primary-blue">
+                            <i data-lucide="check-circle" class="icon text-primary-blue w-6 h-6"></i>
+                            <span>Meticulous Prep</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-xl font-medium color-primary-blue">
+                            <i data-lucide="check-circle" class="icon text-primary-blue w-6 h-6"></i>
+                            <span>Superior Finish</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-primary-blue">
+            <div class="container mx-auto px-4 max-w-4xl text-white">
+                <h2 class="text-4xl font-bold text-center mb-6">What Our Clients Say</h2>
+                <p class="text-lg text-center mb-12 opacity-80">Highlighting professionalism, cleanliness, and lasting results.</p>
+                
+                <div class="space-y-10">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white text-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl relative">
+                        <blockquote class="italic text-xl mb-4">
+                            "The cabinet painting service exceeded expectations! The finish is flawless, truly factory-smooth. Their team was incredibly professional and left the kitchen spotless. A top-tier result."
+                        </blockquote>
+                        <p class="font-semibold text-lg text-accent-brown flex items-center space-x-2">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                            <span>David L., Residential Client (Oakville, ON)</span>
+                        </p>
+                        <div class="absolute top-0 left-0 transform -translate-x-3 -translate-y-3 text-primary-blue opacity-30">
+                            <i data-lucide="quote" class="icon w-10 h-10"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white text-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl relative">
+                        <blockquote class="italic text-xl mb-4">
+                            "We had our commercial garage floor coated with epoxy, and the difference is night and day. Durable, clean, and the job was completed on schedule with zero issues. True craftsmanship."
+                        </blockquote>
+                        <p class="font-semibold text-lg text-accent-brown flex items-center space-x-2">
+                             <i data-lucide="building" class="w-5 h-5"></i>
+                            <span>Sarah K., Commercial Manager (Mississauga, ON)</span>
+                        </p>
+                        <div class="absolute top-0 left-0 transform -translate-x-3 -translate-y-3 text-primary-blue opacity-30">
+                            <i data-lucide="quote" class="icon w-10 h-10"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (Form and Details side-by-side) -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <h2 class="text-4xl font-bold text-center mb-6 color-primary-blue">Get a Free, Detailed Quote</h2>
+                <p class="text-lg text-center text-gray-600 mb-12">Ready to transform your space? Contact us today to discuss your project in Ontario.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="p-8 bg-gray-50 rounded-xl shadow-xl">
+                        <form id="quote-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-blue focus:ring-primary-blue p-3 border"/>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                    <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-blue focus:ring-primary-blue p-3 border"/>
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                                    <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-blue focus:ring-primary-blue p-3 border"/>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-gray-700">Service Needed</label>
+                                <select id="service" name="service" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-blue focus:ring-primary-blue p-3 border bg-white">
+                                    <option value="">Select a Service</option>
+                                    <option value="Cabinet Painting">Cabinet Painting</option>
+                                    <option value="Interior Wall">Interior Wall Painting</option>
+                                    <option value="Exterior Wall">Exterior Wall Painting</option>
+                                    <option value="Epoxy Floor">Epoxy Floor Coating</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="description" class="block text-sm font-medium text-gray-700">Project Description (Details on size, color, timeline)</label>
+                                <textarea id="description" name="description" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-blue focus:ring-primary-blue p-3 border"></textarea>
+                            </div>
+                            <button type="submit" class="bg-accent-brown text-white w-full px-6 py-3 rounded-lg font-bold text-lg hover:bg-amber-900 transition duration-300 shadow-lg">
+                                Submit Request
+                            </button>
+                            <p id="form-message" class="text-center mt-4 text-green-600 hidden font-semibold"></p>
+                        </form>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-6 flex flex-col justify-center">
+                        <div class="p-8 bg-primary-blue rounded-xl shadow-xl text-white h-full flex flex-col justify-center">
+                            <h3 class="text-3xl font-bold mb-6">Contact Information</h3>
+                            <div class="space-y-4 text-lg">
+                                <p class="flex items-center space-x-3 font-medium">
+                                    <i data-lucide="map-pin" class="icon w-6 h-6"></i>
+                                    <span><strong class="font-semibold">Service Area:</strong> Greater Toronto Area & Ontario</span>
+                                </p>
+                                <p class="flex items-center space-x-3 font-medium">
+                                    <i data-lucide="phone" class="icon w-6 h-6"></i>
+                                    <a href="tel:+19055551234" class="hover:underline">(905) 555-1234</a>
+                                </p>
+                                <p class="flex items-center space-x-3 font-medium">
+                                    <i data-lucide="mail" class="icon w-6 h-6"></i>
+                                    <a href="mailto:info@beaver-painters.ca" class="hover:underline">info@beaver-painters.ca</a>
+                                </p>
+                                <p class="pt-4 text-sm opacity-80">
+                                    We aim to respond to all inquiries within <strong>4 hours</strong> during business days.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                
+                <!-- Logo & Slogan -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 text-xl font-bold" id="footer-logo-target">
+                        <!-- Content injected by JS -->
+                    </div>
+                    <p class="text-sm opacity-70">"Bringing Color & Quality to Every Corner."</p>
+                    <div class="flex space-x-4 pt-2">
+                        <!-- Social Media Icons -->
+                        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-blue-500 transition duration-200">
+                             <i data-lucide="facebook" class="icon"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-pink-500 transition duration-200">
+                             <i data-lucide="instagram" class="icon"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-blue-600 transition duration-200">
+                             <i data-lucide="linkedin" class="icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-primary-blue">Quick Links</h4>
+                    <ul class="space-y-2 text-sm opacity-80">
+                        <li><a href="#services" class="hover:text-primary-blue transition duration-200">Our Services</a></li>
+                        <li><a href="#about" class="hover:text-primary-blue transition duration-200">About Beaver-Painters</a></li>
+                        <li><a href="#testimonials" class="hover:text-primary-blue transition duration-200">Client Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-primary-blue transition duration-200">Request a Quote</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-primary-blue">Contact Us</h4>
+                    <ul class="space-y-2 text-sm opacity-80">
+                        <li><a href="tel:+19055551234" class="hover:text-primary-blue transition duration-200">Phone: (905) 555-1234</a></li>
+                        <li><a href="mailto:info@beaver-painters.ca" class="hover:text-primary-blue transition duration-200">Email: info@beaver-painters.ca</a></li>
+                        <li><p>Serving Ontario, Canada</p></li>
+                    </ul>
+                </div>
+
+                <!-- Mini Quote Form -->
+                <div class="p-4 rounded-lg bg-gray-800">
+                    <h4 class="text-lg font-semibold mb-4 text-accent-brown">Request a Callback</h4>
+                    <form id="mini-quote-form" class="space-y-2">
+                        <input type="text" id="mini-name" name="name" placeholder="Your Name" required class="w-full px-3 py-2 rounded-md text-sm text-gray-800 border border-gray-700"/>
+                        <input type="email" id="mini-email" name="email" placeholder="Email Address" required class="w-full px-3 py-2 rounded-md text-sm text-gray-800 border border-gray-700"/>
+                        <button type="submit" class="bg-primary-blue text-white w-full px-3 py-2 rounded-md font-semibold text-sm hover:bg-blue-700 transition duration-200">
+                            Submit Contact Info
+                        </button>
+                    </form>
+                    <p id="mini-form-message" class="text-center mt-2 text-xs text-green-400 hidden font-semibold"></p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-6 border-t border-gray-700 text-center text-sm opacity-60">
+                &copy; <span id="current-year"></span> Beaver-Painters | A Branch of Beaver-Sealer. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // 1. Logo Replacement (for color consistency)
+        // This takes the structure from the hidden #beaver-logo and places it in the header and footer.
+        const beaverLogoHtml = document.getElementById('beaver-logo').innerHTML;
+        document.getElementById('nav-logo-target').innerHTML = beaverLogoHtml;
+        document.getElementById('footer-logo-target').innerHTML = beaverLogoHtml;
+        document.getElementById('beaver-logo').remove(); // Remove the template div
+
+        // Re-initialize lucide icons for the injected elements (important if any icons were inside the logo)
+        // In this case, we have an img tag, but calling it doesn't hurt.
+        lucide.createIcons();
+
+
+        // 2. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // 3. Form Submission Handling (Non-functional, for UI feedback only)
+        function handleFormSubmission(formId, messageId) {
+            const form = document.getElementById(formId);
+            const messageElement = document.getElementById(messageId);
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Stop actual submission
+
+                // Simple check for required fields (should be handled by browser 'required' attribute, but good practice)
+                if (form.checkValidity()) {
+                    messageElement.textContent = 'Quote requested! We will be in touch within 24 hours.';
+                    messageElement.classList.remove('hidden', 'text-red-500');
+                    messageElement.classList.add('text-green-600');
+                    form.reset();
+                    
+                    // Hide message after a few seconds
+                    setTimeout(() => {
+                        messageElement.classList.add('hidden');
+                    }, 5000);
+
+                    // For the mini-quote form, close the mobile menu if open
+                    if (formId === 'mini-quote-form') {
+                        closeMobileMenu();
+                    }
+                } else {
+                    messageElement.textContent = 'Please fill out all required fields correctly.';
+                    messageElement.classList.remove('hidden', 'text-green-600');
+                    messageElement.classList.add('text-red-500');
+                }
+            });
+        }
+
+        handleFormSubmission('quote-form', 'form-message');
+        handleFormSubmission('mini-quote-form', 'mini-form-message');
+
+        // 4. Set Current Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
